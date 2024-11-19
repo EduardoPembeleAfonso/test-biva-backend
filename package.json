@@ -1,0 +1,11 @@
+{
+  "name": "test-biva",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eduardo P. Afonso.",
+  "license": "ISC",
+  "description": ""
+}
