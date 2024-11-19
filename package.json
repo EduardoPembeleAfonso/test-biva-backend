@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint **/*.ts --fix"
   },
   "author": "Eduardo P. Afonso.",
   "license": "ISC",
@@ -35,7 +37,6 @@
     "tsyringe": "^4.8.0"
   },
   "devDependencies": {
-    "@types/axios": "^0.9.36",
     "@types/cors": "^2.8.17",
     "@types/node": "^22.8.1",
     "@types/nodemailer": "^6.4.16",

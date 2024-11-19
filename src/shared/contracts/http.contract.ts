@@ -1,4 +1,4 @@
-import { HttpStatusCode} from 'axios';
+import { HttpStatusCode } from "axios";
 
 export type HttpResponse<T = any> =
   | HttpResponseType<T>
