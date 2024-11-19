@@ -8,9 +8,16 @@ datasource db {
 }
 
 model User {
-  id    String @id @default(uuid())
-  name  String
-  email String
+  id       String @id @default(uuid())
+  name     String
+  email    String
+  password String
+  type     UserTypes
 
   @@map("users")
+}
+
+enum UserTypes {
+  TENANT
+  OWNER
 }
