@@ -21,6 +21,16 @@ export class IUserRepositoryPrismaImpl implements IUserRepository {
     return data;
   }
 
+  index(id: string): Promise<User[]> {
+    return this._prisma.user.findMany({
+      where: {
+        NOT: {
+          id: id,
+        },
+      },
+    });
+  }
+
   async findBySpecificId(id: string): Promise<User> {
     return this._prisma.user.findUnique({
       where: { id },
