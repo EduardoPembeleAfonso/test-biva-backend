@@ -5,6 +5,7 @@ import {
   GetUsersController,
   LoginUserController,
 } from "../controllers";
+import { ensureAuthenticated } from "@/shared";
 
 const router = Router();
 
@@ -18,8 +19,13 @@ router.post("/auth/create", createController.handle.bind(createController));
 
 router.post("/auth/login", loginController.handle.bind(loginController));
 
-// router.use(ensureAuthenticated);
+router.use((req, res, next) => {
+  ensureAuthenticated(req, res, next);
+});
 router.get("/user/:id", getByIdController.handle.bind(getByIdController));
-router.get("/users/:id", getAllUsersController.handle.bind(getAllUsersController));
+router.get(
+  "/users/:id",
+  getAllUsersController.handle.bind(getAllUsersController)
+);
 
 export default router;
